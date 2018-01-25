@@ -1,0 +1,73 @@
+@import './mixin.scss';
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+div,
+p,
+li,
+ul,
+span,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+a {text-decoration: none; color: #333;}
+#root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.bottom-navigation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.homePage {
+  position: absolute;
+  top: 0;
+  bottom: 56px;
+  left: 0;
+  right: 0;
+  .header-search {
+    padding: 10px;
+    @include backgroundColor(#d3dd31);
+    .location span {
+      display: inline-block;
+      vertical-align: super;
+    }
+    .search-container {
+      position: relative;
+      .search-icon {
+        position: absolute;
+        top: 50%;
+        left: 4px;
+        @include transform(translateY(-50%));
+        z-index: 9;
+      }
+      .search-input {
+        width: 100% !important;
+        height: 30px !important;
+        background: #fff !important;
+      }
+    }
+  }
+  .main {
+    padding: 10px;
+    .banner {
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+}
+
