@@ -89,6 +89,7 @@ module.exports = {
       'router': `${paths.appSrc}/router`,
       'styles': `${paths.appSrc}/styles`,
       'svgIcon': `${paths.appSrc}/svgIcon`,
+      'utils': `${paths.appSrc}/utils`,
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
@@ -212,7 +213,7 @@ module.exports = {
             test: /\.scss$/,
             loaders: ['style-loader', 'css-loader', 'sass-loader']
           },
-          /*{
+          {
             test: /\.svg$/,
             use: [
               {
@@ -231,15 +232,15 @@ module.exports = {
                 }
               }
             ]
-          },*/
-          {
+          },
+          /*{
             test: /\.svg$/,
             loader: 'svg-sprite-loader',
             options: {
               symbolId: 'icon-[name]'
             },
             include: `${paths.appSrc}/svgIcon`
-          }
+          }*/
         ],
       },
       // ** STOP ** Are you adding a new loader?

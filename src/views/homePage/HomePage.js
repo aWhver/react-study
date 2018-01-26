@@ -3,7 +3,7 @@
  */
 import React, { Component } from 'react'
 import Header from '../../components/header/Header'
-import Banner from '../../components/banner/Banner'
+import Banner from 'components/banner/Banner'
 class HomePage extends Component {
   render () {
     return (

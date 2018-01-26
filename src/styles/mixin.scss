@@ -8,3 +8,17 @@
   -o-transform: $prop;
   transform: $prop;
 }
+@mixin borderRadius ($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin transition($tran) {
+  -webkit-transition: $tran;
+  -moz-transition: $tran;
+  -ms-transition: $tran;
+  -o-transition: $tran;
+  transition: $tran;
+}
