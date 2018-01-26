@@ -67,7 +67,52 @@ a {text-decoration: none; color: #333;}
     .banner {
       font-size: 12px;
       text-align: center;
+      overflow: hidden;
+      &-container {
+        width: 100%;
+        display: flex;
+        display: -webkit-flex;
+        @include transform(translateX(0px));
+        &.tran { @include transition(transform 0.4s linear); }
+        ul {
+          display: flex;
+          display: -webkit-flex;
+          flex-wrap: wrap;
+          -width: 50%;
+          &.slick-dots {
+            width: 25%; position: static;
+            li.slick-active button:before { color: #b2ff59; }
+          }
+          li {
+            flex-basis: 20%;
+            -webkit-flex-basis: 20%;
+            div.banner-svg-container {
+              width: 40px;
+              height: 40px;
+              margin: 8px auto 5px;
+              @include borderRadius(100%);
+            }
+          }
+        }
+      }
+    }
+    .tab {
+      text-align: center;
+      span {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        background: #d3dd31;
+        @include borderRadius(10px);
+        margin: 5px 6px;
+        &.active {
+          width: 18px;
+        }
+      }
     }
   }
 }
-
+.svg-icon {
+  width: 40px;
+  height: 40px;
+}
