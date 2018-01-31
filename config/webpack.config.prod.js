@@ -96,6 +96,7 @@ module.exports = {
       'styles': `${paths.appSrc}/styles`,
       'svgIcon': `${paths.appSrc}/svgIcon`,
       'utils': `${paths.appSrc}/utils`,
+      'api': `${paths.appSrc}/api`,
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',

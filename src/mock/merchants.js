@@ -27,3 +27,9 @@ for (let i = 0; i < count; i++) {
     ]
   }))
 }
+
+export default {
+  getCarefulSelect: config => {
+    console.log(config);
+  }
+}
