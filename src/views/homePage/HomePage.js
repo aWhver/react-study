@@ -5,6 +5,7 @@ import React, { Component } from 'react'
 import Header from '../../components/homePage/Header'
 import Banner from 'components/homePage/Banner'
 import CarefulSelect from 'components/homePage/carefulSelect'
+import AroundStore from 'components/homePage/aroundStore'
 class HomePage extends Component {
   render () {
     return (
@@ -13,6 +14,7 @@ class HomePage extends Component {
         <div className="main">
           <Banner/>
           <CarefulSelect/>
+          <AroundStore/>
         </div>
       </div>
     )

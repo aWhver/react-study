@@ -1,0 +1,98 @@
+@charset 'utf-8';
+body { font-size: 12px; }
+* { margin: 0; padding: 0 }
+li { list-style: none; }
+a { text-decoration: none; color: #333; }
+img { vertical-align: middle; }
+#banner {
+  height: 5rem;
+  overflow: hidden;
+  position: relative;
+}
+#banner ul {
+  width: 600%;
+  height: 100%;
+  overflow: hidden;
+}
+#banner ul li {
+  width: 10rem;
+  float: left;
+  height: 100%;
+}
+#banner ol {
+  position: absolute;
+  bottom: 0.5rem;
+  width: 100%;
+  text-align: center;
+}
+#banner ol li {
+  display: inline-block;
+  width: 0.2rem;
+  height: 0.2rem;
+  background: rgba(0, 0, 0, .4);
+  border-radius: 100%; 
+  margin: 0 0.2rem;
+}
+#banner ol li.swiper-pagination-bullet-active { background: #007aff; }
+#content {
+  height: 10rem;
+}
+#content div.title {
+  height: 1.2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 18px;
+}
+#content div.title div {
+  flex: 1;
+  -webkit-flex: 1;
+  text-align: center;
+  line-height:1.2rem;
+  border: 1px solid #ddd;
+}
+#content div.title div.active { background: #ddd; }
+#content .main-con { overflow: hidden }
+#content .main-con .transform-container { width: 20rem; display: flex; transform: translateX(0rem); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) }
+#content .main-con .transform-container.active { transform: translateX(-10rem) }
+#content .main-con .transform-container > div { width: 10rem; height: 9rem; overflow-y: scroll; }
+#content .news-list li a {
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+#content .news-list li div:nth-of-type(1) {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 0.5rem;
+}
+#content .news-list li div:nth-of-type(2) {
+  flex: 1;
+  -webkit-flex: 1;
+}
+#content .news-list li div:nth-of-type(3) { position: relative; margin-right: 0.2rem; }
+#content .news-list li div:nth-of-type(3)::after {
+  content: " ";
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #C8C8CD;
+  border-style: solid;
+  -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+}
+#content .wx-function {
+
+}
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>微信微网站</title>
+  <script>
+    var html = document.querySelector('html')
+    changeRem()
+    window.addEventListener('resize', changeRem)
+    function changeRem() {
+      var width = html.getBoundingClientRect().width
+      html.style.fontSize = width / 10 + 'px'
+    }
+  </script>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/weui.css">
+  <script src="js/swiper-3.4.1.min.js"></script>
+</head>
+<body>
+  <div id="banner" class="swiper-container">
+    <ul class="swiper-wrapper">
+      <li class="swiper-slide"><a href=""><img src="image/banner/1.jpg" alt="" width="100%" height="100%"></a></li>
+      <li class="swiper-slide"><a href=""><img src="image/banner/2.jpg" alt="" width="100%" height="100%"></a></li>
+      <li class="swiper-slide"><a href=""><img src="image/banner/3.jpg" alt="" width="100%" height="100%"></a></li>
+      <li class="swiper-slide"><a href=""><img src="image/banner/4.jpg" alt="" width="100%" height="100%"></a></li>
+    </ul>
+    <ol class="swiper-pagination">
+      <li class="active"></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ol>
+  </div>
+
+  <div id="content">
+    <div class="title">
+      <div class="articel-list active">文章列表</div>
+      <div class="wx">微信应用</div>
+    </div>
+    <div class="main-con">
+      <div class="transform-container">
+          <div class="news-list">
+            <ul id="news-list">
+              
+            </ul>
+          </div>
+          <div class="wx-function">
+            <div class="weui-grids">
+              <a href="javascript:;" class="weui-grid">
+                <div class="weui-grid__icon"><img src="image/icons/order.png" alt=""></div>
+                <p class="weui-grid__label">个人档案</p>
+              </a>
+              <a href="javascript:;" class="weui-grid">
+                  <div class="weui-grid__icon"><img src="image/icons/picUpload.png" alt=""></div>
+                  <p class="weui-grid__label">图片拍照</p>
+              </a>
+              <a href="javascript:;" class="weui-grid">
+                  <div class="weui-grid__icon"><img src="image/icons/press.png" alt=""></div>
+                  <p class="weui-grid__label">我的账单</p>
+              </a>
+              <a href="javascript:;" class="weui-grid">
+                  <div class="weui-grid__icon"><img src="image/icons/share.png" alt=""></div>
+                  <p class="weui-grid__label">精彩分享</p>
+              </a>
+              <a href="javascript:;" class="weui-grid">
+                  <div class="weui-grid__icon"><img src="image/icons/game.png" alt=""></div>
+                  <p class="weui-grid__label">娱乐游戏</p>
+              </a>
+              <a href="javascript:;" class="weui-grid">
+                  <div class="weui-grid__icon"><img src="image/icons/record.png" alt=""></div>
+                  <p class="weui-grid__label">录音翻译</p>
+              </a>
+              <a href="javascript:;" class="weui-grid">
+                  <div class="weui-grid__icon"><img src="image/icons/map.png" alt=""></div>
+                  <p class="weui-grid__label">实时地图</p>
+              </a>
+              <a href="javascript:;" class="weui-grid">
+                  <div class="weui-grid__icon"><img src="image/icons/check.png" alt=""></div>
+                  <p class="weui-grid__label">图片预览</p>
+              </a>
+              <a href="javascript:;" class="weui-grid">
+                  <div class="weui-grid__icon"><img src="image/icons/scan.png" alt=""></div>
+                  <p class="weui-grid__label">微信扫描</p>
+              </a>  
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="weui-tabbar">
+    <a href="javascript:;" class="weui-tabbar__item weui-bar__item_on">
+      <span style="display: inline-block; position: relative">
+        <img src="image/icons/weixin.png" alt="" class="weui-tabbar__icon">
+        <span></span>
+      </span>
+      <p class="weui-tabbar__label">微信</p>
+    </a>
+    <a href="javascript:;" class="weui-tabbar__item">
+      <span style="display: inline-block; position: relative">
+        <img src="image/icons/addBook.png" alt="" class="weui-tabbar__icon">
+      </span>
+      <p class="weui-tabbar__label">通讯录</p>
+    </a>
+    <a href="javascript:;" class="weui-tabbar__item">
+      <span style="display: inline-block; position: relative">
+        <img src="image/icons/find.png" alt="" class="weui-tabbar__icon">
+      </span>
+      <p class="weui-tabbar__label">发现</p>
+    </a>
+    <a href="javascript:;" class="weui-tabbar__item">
+      <span style="display: inline-block; position: relative">
+        <img src="image/icons/me.png" alt="" class="weui-tabbar__icon">
+      </span>
+      <p class="weui-tabbar__label">我</p>
+    </a>
+  </div>
+  <script src="js/index.js"></script>
+  <script>
+    function getNews(data) {
+      console.log(data);
+      var newsList = data.showapi_res_body.newslist
+      var oNewsList = document.getElementById('news-list')
+      console.log(typeof data.showapi_res_body.newslist);
+      for (var i = 0; i < newsList.length; i++) {
+        oNewsList.innerHTML += '\
+        <li>\
+          <a href="'+ newsList[i].url +'">\
+            <div><img src="'+ newsList[i].picUrl +'" width="100%" height="100%" alt=""></div>\
+            <div class="ellipsis">'+ newsList[i].title +'</div>\
+            <div></div>\
+          </a>\
+        </li>'
+      }
+    }
+  </script>
+</body>
+</html>

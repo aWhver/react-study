@@ -4,7 +4,7 @@
 import request from 'utils/request'
 export function getCarefulSelect (params) {
   return request({
-    url: 'homePage/getCarefulSelect',
+    url: 'merchants/carefulSelect',
     type: 'get',
     params: params
   })

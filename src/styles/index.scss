@@ -15,7 +15,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+figure{
   margin: 0;
   padding: 0;
 }
@@ -40,6 +41,7 @@ li { list-style: none; }
   bottom: 56px;
   left: 0;
   right: 0;
+  overflow: auto;
   .header-search {
     padding: 10px;
     @include backgroundColor(#d3dd31);
@@ -117,8 +119,44 @@ li { list-style: none; }
         display: -webkit-flex;
         justify-content: space-around;
         flex-wrap: wrap;
+        margin-top: 15px;
         .careful-select-item {
-         flex-basis: 49%;
+         flex-basis: 48%;
+          font-size: 12px;
+          text-align: right;
+          margin-bottom: 20px;
+          > div {
+            position: relative;
+            img:nth-of-type(1) {
+              width: 100%;
+            }
+            img:nth-of-type(2) {
+              position: absolute;
+              left: 20px;
+              bottom: -20px;
+            }
+          }
+        }
+      }
+    }
+    .around-store-container {
+      .around-store {
+        margin-top: 20px;
+        &-item {
+          display: flex;
+          display: -webkit-flex;
+          figure { width: 80px; }
+          > div {
+            flex: 1;
+            -webkit-flex: 1;
+          }
+          p {
+            font-size: 12px;
+            margin: 8px 0;
+            span {
+              margin-right: 5px;
+            }
+          }
         }
       }
     }
@@ -128,3 +166,9 @@ li { list-style: none; }
   width: 40px;
   height: 40px;
 }
+.star {
+  width: 15px !important;
+  height: 15px !important;
+}
+.fr { float: right; }
+.fl { float: left; }

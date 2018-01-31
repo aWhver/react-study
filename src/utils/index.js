@@ -9,3 +9,9 @@ export function getStyle (dom, prop) {
   }
   return style
 }
+
+export function paramObj (url) {
+  const query = url.split('?')[1]
+  if (!query) return {}
+  return JSON.parse('{"' + decodeURIComponent(query).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}')
+}
