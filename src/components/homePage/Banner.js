@@ -115,11 +115,7 @@ class Banner extends Component {
                 <li key={item.color}>
                   <div>
                     <div className="banner-svg-container" style={{background:item.color}}>
-                      <svg className="svg-icon">
-                        <use xlinkHref={`#icon-${item.icon}`}>
-
-                        </use>
-                      </svg>
+                      <img src={item.icon} alt=""/>
                     </div>
                   </div>
                   <span>{item.type}</span>
@@ -131,11 +127,7 @@ class Banner extends Component {
                 <li key={item.color}>
                   <div>
                     <div className="banner-svg-container" style={{background:item.color}}>
-                      <svg className="svg-icon">
-                        <use xlinkHref={`#icon-${item.icon}`}>
-
-                        </use>
-                      </svg>
+                      <img src={item.icon} alt=""/>
                     </div>
                   </div>
                   <span>{item.type}</span>

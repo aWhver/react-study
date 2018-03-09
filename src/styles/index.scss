@@ -36,12 +36,6 @@ li { list-style: none; }
   right: 0;
 }
 .homePage {
-  position: absolute;
-  top: 0;
-  bottom: 56px;
-  left: 0;
-  right: 0;
-  overflow: auto;
   .header-search {
     padding: 10px;
     @include backgroundColor(#d3dd31);
@@ -67,6 +61,12 @@ li { list-style: none; }
   }
   .main {
     padding: 10px;
+    position: absolute;
+    top: 78px;
+    bottom: 56px;
+    left: 0;
+    right: 0;
+    overflow: auto;
     .banner {
       font-size: 12px;
       text-align: center;
@@ -94,6 +94,7 @@ li { list-style: none; }
               height: 40px;
               margin: 8px auto 5px;
               @include borderRadius(100%);
+              img { width: 70%; margin: 0 auto; @include transform(translateY(6px))}
             }
           }
         }
@@ -125,7 +126,7 @@ li { list-style: none; }
           font-size: 12px;
           text-align: right;
           margin-bottom: 20px;
-          > div {
+          > a div {
             position: relative;
             img:nth-of-type(1) {
               width: 100%;
@@ -145,7 +146,12 @@ li { list-style: none; }
         &-item {
           display: flex;
           display: -webkit-flex;
-          figure { width: 80px; }
+          margin: 5px 0;
+          figure {
+            width: 80px;
+            margin-right: 10px;
+            img { width: 100%; }
+          }
           > div {
             flex: 1;
             -webkit-flex: 1;
@@ -162,6 +168,34 @@ li { list-style: none; }
     }
   }
 }
+.store {
+  .storeInfo {
+    display: flex;
+    display: -webkit-flex;
+    background: rgba(0,0,0,.8);
+    color: #fff;
+    figure {
+      width: 80px;
+      margin-right: 20px;
+      transform: translate(10px, 15px);
+      img { width: 100%; }
+    }
+    div {
+      flex: 1;
+      -webkit-flex: 1;
+      h2 {
+        margin-bottom: 15px;
+        margin-top: 10px;
+      }
+      span {
+        border: 1px solid #adff2f;
+        border-radius: 20px;
+        padding: 4px 8px;
+        font-size: 14px;
+      }
+    }
+  }
+}
 .svg-icon {
   width: 40px;
   height: 40px;
@@ -172,3 +206,80 @@ li { list-style: none; }
 }
 .fr { float: right; }
 .fl { float: left; }
+.rmc-pull-to-refresh-content-wrapper {overflow: hidden;}
+.rmc-pull-to-refresh-indicator {margin-top: -25px;}
+.fixedPage {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  background: #fff;
+  @include transition(0.4s);
+  transform: translate3d(100%, 0, 0);
+  .shopCar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #290819;
+    display: flex;
+    .left {
+      flex: 1;
+      color: #fff;
+      img { width: 40px; height: 40px; }
+      .cartImg {
+        padding: 0 10px;
+        margin-right: 10px;
+        position: relative;
+        i {
+          position: absolute;
+          border-radius: 100%;
+          background: red;
+          right: 0;
+          top:0;
+          width: 20px;
+          height: 20px;
+          text-align: center;
+          line-height: 20px;
+          font-style: normal;
+          font-size: 12px;
+        }
+      }
+      .totalPrice {
+        p {font-size: 12px; letter-spacing: 2px;}
+      }
+    }
+    .right {
+      width: 120px;
+      text-align: center;
+      line-height: 44px;
+      color: #04cd03;
+    }
+  }
+}
+.active {
+  transform: translate3d(0, 0, 0);
+}
+.topBar {
+  height: 35px;
+  background: red;
+}
+.menu-item { margin: 15px; border-bottom: 1px solid #666; }
+.count {
+  span.btn {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 25px;
+    background: #b5bb1f;
+  }
+  span.num {
+    margin: 0 15px;
+  }
+}

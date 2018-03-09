@@ -7,10 +7,12 @@ import history from './history'
 import HomePage from 'views/homePage/HomePage'
 import Order from 'views/order/Order'
 import Profile from 'views/profile/Profile'
+import Store from 'views/store/Store'
 const routes = [
   {path: '/homePage', component: HomePage, exact: true},
   {path: '/order', component: Order, exact: false},
-  {path: '/profile', component: Profile, exact: false}
+  {path: '/profile', component: Profile, exact: false},
+  {path: '/store/:id', component: Store, exact: false}
 ]
 
 class Routes extends Component {

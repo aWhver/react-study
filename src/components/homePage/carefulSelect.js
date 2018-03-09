@@ -2,6 +2,7 @@
  * Created by zhaojuntong on 2018/1/30.
  */
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 import { getCarefulSelect } from 'api/homePage'
 class CarefulSelect extends Component {
   constructor () {
@@ -38,11 +39,13 @@ class SelectItem extends Component {
   render () {
     return (
       <div className="careful-select-item">
-        <div>
-          <img src={this.props.item.avatar1} alt=""/>
-          <img src={this.props.item.avatar} alt=""/>
-        </div>
-        <p className="name">{this.props.item.name}</p>
+        <Link to={`/store/${this.props.item.id}`}>
+          <div>
+            <img src={this.props.item.avatar1} alt=""/>
+            <img src={this.props.item.avatar} alt=""/>
+          </div>
+          <p className="name">{this.props.item.name}</p>
+        </Link>
       </div>
     )
   }

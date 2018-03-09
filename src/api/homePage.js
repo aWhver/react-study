@@ -9,3 +9,11 @@ export function getCarefulSelect (params) {
     params: params
   })
 }
+
+export function getAroundStore (params) {
+  return request({
+    url: 'merchants/aroundStore',
+    type: 'get',
+    params
+  })
+}
